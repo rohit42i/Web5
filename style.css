@@ -1,0 +1,289 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+  background-size: 42px 42px;
+  opacity: 0.35;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(0,0,0,0.94);
+  border-bottom: 1px solid rgba(255,255,255,0.22);
+  backdrop-filter: blur(10px);
+}
+
+.nav {
+  width: min(100%, 1080px);
+  margin: 0 auto;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.menu-toggle {
+  display: none;
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 7px 10px;
+  font-size: 1.1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+}
+
+.nav-links a,
+.socials a,
+.btn {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.nav-links a {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  opacity: 0.88;
+}
+
+.nav-links a:hover,
+.socials a:hover {
+  color: #8b0000;
+}
+
+main {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+.hero {
+  min-height: 72vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 90px 0 58px;
+  border-bottom: 2px solid #fff;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #bdbdbd;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.82rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(3.6rem, 15vw, 8.7rem);
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.hero-subtitle {
+  margin: 24px 0 0;
+  max-width: 620px;
+  font-size: clamp(1.05rem, 3.8vw, 1.45rem);
+  color: #f2f2f2;
+}
+
+.hero-actions {
+  margin-top: 34px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-block;
+  border: 2px solid #fff;
+  padding: 12px 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  background: #fff;
+  color: #000;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+}
+
+.btn:hover {
+  border-color: #8b0000;
+}
+
+.blog-section {
+  padding: 42px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.36);
+}
+
+h2 {
+  margin: 0 0 22px;
+  font-size: clamp(2.1rem, 9vw, 5.2rem);
+  line-height: 0.95;
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+p {
+  margin: 0 0 18px;
+  max-width: 800px;
+  font-size: clamp(1rem, 4.1vw, 1.18rem);
+  color: #f5f5f5;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.genre-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 9px;
+}
+
+.genre-list li {
+  border-left: 4px solid #fff;
+  padding: 8px 0 8px 14px;
+  font-size: 1.08rem;
+  font-weight: 900;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0 16px;
+}
+
+.socials a {
+  border: 2px solid #fff;
+  padding: 10px 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.email {
+  color: #d7d7d7;
+}
+
+footer {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 32px 18px 44px;
+  color: #bdbdbd;
+}
+
+footer p {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+::selection {
+  background: #fff;
+  color: #000;
+}
+
+@media (max-width: 720px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    padding: 12px 14px;
+  }
+
+  .nav-links {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    top: 58px;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background: #000;
+    border: 1px solid rgba(255,255,255,0.35);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.18);
+  }
+
+  main {
+    padding: 0 16px;
+  }
+
+  .hero {
+    min-height: 62vh;
+    padding-top: 76px;
+  }
+
+  .blog-section {
+    padding: 34px 0;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
